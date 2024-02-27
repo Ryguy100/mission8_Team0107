@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mission8_Team0107.Models
 {
-    public class Task
+    public class TaskEntity
     {
         [Key]
         [Required]
