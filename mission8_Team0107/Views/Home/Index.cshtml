@@ -2,6 +2,87 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+@model List<TaskEntity>
+
+<div class="container">
+    <div class="row">
+        <div class="col"><h1>Stephen Covey's Time Management Matrix</h1></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2"></div>
+        <div class="col-4"><h2>URGENT</h2></div>
+        <div class="col-4"><h2>NOT URGENT</h2></div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2"><h2>IMPORTANT</h2></div>
+        <div class="col-4">
+            <ul>
+                @foreach (var x in Model)
+                {
+                    if (x.Quadrant == 1 && !x.IsCompleted)
+                    {    
+                        <li>@x.TaskName @x.DueDate 
+                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-4">
+            <ul>
+                @foreach (var x in Model)
+                {
+                    if (x.Quadrant == 2 && !x.IsCompleted)
+                    {
+                        <li>
+                            @x.TaskName @x.DueDate
+                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2"><h2>NOT IMPORTANT</h2></div>
+        <div class="col-4">
+            <ul>
+                @foreach (var x in Model)
+                {
+                    if (x.Quadrant == 3 && !x.IsCompleted)
+                    {
+                        <li>
+                            @x.TaskName @x.DueDate
+                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-4">
+            <ul>
+                @foreach (var x in Model)
+                {
+                    if (x.Quadrant == 4 && !x.IsCompleted)
+                    {
+                        <li>
+                            @x.TaskName @x.DueDate
+                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-1"></div>
+    </div>
 </div>
+
