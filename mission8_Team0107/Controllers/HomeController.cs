@@ -6,13 +6,12 @@ namespace mission8_Team0107.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private iTaskRepository _repo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(iTaskRepository temp)
         {
-            _logger = logger;
+            _repo = temp;
         }
-
         public IActionResult Index()
         {
             return View();
