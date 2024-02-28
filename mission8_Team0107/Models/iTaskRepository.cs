@@ -5,5 +5,7 @@
         List<TaskEntity> Tasks { get; }
 
         public void AddTask(TaskEntity task);
+        public void RemoveTask(TaskEntity task);
+        public void UpdateTask(TaskEntity task);
     }
 }
