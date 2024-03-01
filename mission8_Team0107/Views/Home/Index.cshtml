@@ -26,7 +26,7 @@
                     if (x.Quadrant == 1 && x.IsCompleted == false)
                     {
                         <li>
-                            @x.TaskName @x.DueDate
+                            <h6>@x.TaskName</h6> @x.DueDate
                             <a class="btn btn-outline-dark btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                             <a class="btn btn-outline-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                         </li>
@@ -41,7 +41,7 @@
                     if (x.Quadrant == 2 && x.IsCompleted == false)
                     {
                         <li>
-                            @x.TaskName @x.DueDate
+                            <h6>@x.TaskName</h6> @x.DueDate
                             <a class="btn btn-outline-dark btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                             <a class="btn btn-outline-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                         </li>
@@ -61,7 +61,7 @@
                     if (x.Quadrant == 3 && x.IsCompleted == false)
                     {
                         <li>
-                            @x.TaskName @x.DueDate
+                            <h6>@x.TaskName</h6> @x.DueDate
                             <a class="btn btn-outline-dark btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                             <a class="btn btn-outline-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                         </li>
@@ -76,7 +76,7 @@
                     if (x.Quadrant == 4 && x.IsCompleted == false)
                     {
                         <li>
-                            @x.TaskName @x.DueDate
+                            <h6>@x.TaskName</h6> @x.DueDate
                             <a class="btn btn-outline-dark btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                             <a class="btn btn-outline-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                         </li>
