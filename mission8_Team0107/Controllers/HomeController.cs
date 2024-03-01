@@ -15,12 +15,12 @@ namespace mission8_Team0107.Controllers
             _repo = temp;
         }
 
-        //public IActionResult Index()
-        //{
-        //    var tasks = sqlite3_context.Tasks.ToList();
+        public IActionResult Index()
+        {
+            var tasks = _repo.Tasks.ToList();
 
-        //    return View(tasks);
-        //}
+            return View(tasks);
+        }
 
         [HttpGet]
         public IActionResult AddTask()
@@ -40,9 +40,9 @@ namespace mission8_Team0107.Controllers
             return View(new TaskEntity());
         }
 
-        public IActionResult AddTask()
-        {
-            return View();
-        }
+        //public IActionResult AddTask()
+        //{
+        //    return View();
+        //}
     }
 }

@@ -13,8 +13,7 @@ namespace mission8_Team0107.Models
         [Required(ErrorMessage = "Task is a required field")]
         public string TaskName { get; set; }
 
-        [Required(ErrorMessage = "Due Date is a required field")]
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
         
         [Required(ErrorMessage = "Quadrant is a required field")]
         public int? Quadrant { get; set; }
@@ -22,7 +21,7 @@ namespace mission8_Team0107.Models
         [ForeignKey("CategoryId")]
         public int? CategoryId { get; set; }
         public Category? Category { get; set; }
-        public bool IsCompleted { get; set; }
+        public bool? IsCompleted { get; set; }
 
 
     }
