@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using mission8_Team0107.Models;
 using SQLitePCL;
 using System.Diagnostics;
@@ -39,9 +38,7 @@ namespace mission8_Team0107.Controllers
             if (ModelState.IsValid)
             {
                 _repo.AddTask(m);
-                var tasks = _repo.Tasks.ToList();
-                
-                return View("Index", tasks);
+                return View(m);
             }
             else
             {
@@ -50,49 +47,6 @@ namespace mission8_Team0107.Controllers
                     .ToList();
                 return View(m);
             }
-        }
-
-
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-
-            var recordToEdit = _repo.Tasks
-            .Single(x => x.TaskId == id);
-
-            ViewBag.Categories = _repo.Categories
-                .OrderBy(x => x.CategoryName)
-                .ToList();
-
-            return View("AddTask", recordToEdit);
-        }
-
-        [HttpPost]
-
-        public IActionResult Edit(TaskEntity updatedInfo)
-        {
-            _repo.UpdateTask(updatedInfo);
-
-            return RedirectToAction("Index");
-        }
-
-        //[HttpGet]
-        //public IActionResult Delete(int id)
-        //{
-        //    var recordToDelete = _repo.Tasks
-        //        .Single(x => x.TaskId == id);
-
-        //    var tasks = _repo.Tasks.ToList();
-
-        //    return View("Index", recordToDelete);
-        //}
-
-        [HttpPost]
-        public IActionResult Delete(TaskEntity task)
-        {
-            _repo.RemoveTask(task);
-
-            return RedirectToAction("Index");
         }
     }
 }
