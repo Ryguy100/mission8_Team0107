@@ -38,8 +38,9 @@ namespace mission8_Team0107.Controllers
             if (ModelState.IsValid)
             {
                 _repo.AddTask(m);
+                var tasks = _repo.Tasks.ToList();
                 
-                return View("Index", m);
+                return View("Index", tasks);
             }
             else
             {
