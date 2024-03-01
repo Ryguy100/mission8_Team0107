@@ -24,3 +24,14 @@ body {
 .navbar-baby-blue {
     background-color: #add8e6; /* Baby blue color */
 }
+
+
+.bordered-col {
+    border: 1px solid #ccc;
+}
+
+.bordered-row {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
