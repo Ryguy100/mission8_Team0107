@@ -17,6 +17,11 @@ namespace mission8_Team0107.Controllers
         {
             return View();
         }
+
+        public IActionResult AddTask()
+        {
+            return View();
+        }
     }
 }
 
