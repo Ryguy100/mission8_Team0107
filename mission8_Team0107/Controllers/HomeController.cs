@@ -83,7 +83,7 @@ namespace mission8_Team0107.Controllers
                 .Single(x => x.TaskId == id);
 
 
-            return View(recordToDelete);
+            return View("Confirmation", recordToDelete);
         }
 
         [HttpPost]
