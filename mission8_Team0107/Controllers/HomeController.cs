@@ -39,5 +39,10 @@ namespace mission8_Team0107.Controllers
             }
             return View(new TaskEntity());
         }
+
+        public IActionResult AddTask()
+        {
+            return View();
+        }
     }
 }

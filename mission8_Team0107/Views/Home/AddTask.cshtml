@@ -1,46 +1,65 @@
 ﻿@model TaskEntity
 
 <h2>Add a new task to your board</h2>
+<br />
+<style>
+    .flex-container {
+        display: flex;
+        align-items: flex-start;
+    }
 
-<div>
+    .form-container {
+        margin-right: 40px; 
+    }
 
-    <form method="post">
+    img {
+        width: 300px;
+        height: 300px;
+    }
+</style>
 
-        <input type="hidden" asp-for="TaskId" />
 
-        <label asp-for="TaskName">Task Name:</label>
-        <input asp-for="TaskName" />
-        <br />
-        <label asp-for="DueDate">Due Date:</label>
-        <input asp-for="DueDate" />
-        <br />
-        <label asp-for="Quadrant">Quadrant:</label>
-        <select asp-for="Quadrant">
-            <option value="Q1">Quadrant 1</option>
-            <option value="Q2">Quadrant 2</option>
-            <option value="Q3">Quadrant 3</option>
-            <option value="Q4">Quadrant 4</option>
-        </select>
-        <br />
-        <label asp-for="Category">Category:</label>
-        <select asp-for="Category">
-            <option value=" ">Select a Category</option>
-            @foreach (Category c in ViewBag.Categories)
-            {
-                <option value="@c.CategoryId">@c.CategoryName</option>
-            }
-        </select>
-        <br />
-        <label asp-for="IsCompleted">Completed:</label>
-        <select asp-for="IsCompleted ">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select>
-        <br />
-        <button type="Submit">Submit Task</button>
+<div class="flex-container">
+    <div class="form-container">
+        <form method="post">
 
-        <div asp-validation-summary="All"></div>
-    </form>
 
-    <img src="~/7_habits_decision-making_matrix.png" alt="Image Description" style="width: 200px; height: 200px; margin-left: 20px;" />
+            <input type="hidden" asp-for="TaskId" />
+
+            <label asp-for="TaskName">Task Name:</label>
+            <input asp-for="TaskName" />
+            <br /><br />
+            <label asp-for="DueDate">Due Date:</label>
+            <input asp-for="DueDate" />
+            <br /><br />
+            <label asp-for="Quadrant">Quadrant:</label>
+            <select asp-for="Quadrant">
+                <option value="Q1">Quadrant 1</option>
+                <option value="Q2">Quadrant 2</option>
+                <option value="Q3">Quadrant 3</option>
+                <option value="Q4">Quadrant 4</option>
+            </select>
+            <br /><br />
+            <label asp-for="Category">Category:</label>
+            <select asp-for="Category">
+                <option value=" ">Select a Category</option>
+    @*             @foreach (Category c in ViewBag.Categories)
+                {
+                    <option value="@c.CategoryId">@c.CategoryName</option>
+                } *@
+            </select>
+            <br /><br />
+            <label asp-for="IsCompleted">Completed:</label>
+            <select asp-for="IsCompleted ">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <br /><br /><br />
+            <button type="Submit">Submit Task</button>
+
+            <div asp-validation-summary="All"></div>
+            </form>
+        </div>
+
+    <img src="~/7_habits_decision-making_matrix.png" alt="Image Description" />
 </div>
