@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using mission8_Team0107.Models;
 using SQLitePCL;
 using System.Diagnostics;
+using System.Linq.Expressions;
 
 namespace mission8_Team0107.Controllers
 {
@@ -14,12 +15,12 @@ namespace mission8_Team0107.Controllers
             _repo = temp;
         }
 
-        public IActionResult Index()
-        {
-            var tasks = sqlite3_context.Tasks.ToList();
+        //public IActionResult Index()
+        //{
+        //    var tasks = sqlite3_context.Tasks.ToList();
 
-            return View(tasks);
-        }
+        //    return View(tasks);
+        //}
 
         [HttpGet]
         public IActionResult AddTask()
@@ -34,9 +35,9 @@ namespace mission8_Team0107.Controllers
             if (ModelState.IsValid)
             {
                 _repo.AddTask(m);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
-            return View(m);
+            return View(new TaskEntity());
         }
     }
 }
