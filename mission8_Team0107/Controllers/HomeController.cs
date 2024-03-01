@@ -76,16 +76,15 @@ namespace mission8_Team0107.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpGet]
-        //public IActionResult Delete(int id)
-        //{
-        //    var recordToDelete = _repo.Tasks
-        //        .Single(x => x.TaskId == id);
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var recordToDelete = _repo.Tasks
+                .Single(x => x.TaskId == id);
 
-        //    var tasks = _repo.Tasks.ToList();
 
-        //    return View("Index", recordToDelete);
-        //}
+            return View(recordToDelete);
+        }
 
         [HttpPost]
         public IActionResult Delete(TaskEntity task)
