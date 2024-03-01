@@ -3,6 +3,7 @@
     public interface iTaskRepository
     {
         List<TaskEntity> Tasks { get; }
+        List<Category> Categories { get; }
 
         public void AddTask(TaskEntity task);
         public void RemoveTask(TaskEntity task);

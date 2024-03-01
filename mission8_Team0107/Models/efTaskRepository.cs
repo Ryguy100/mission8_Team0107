@@ -10,6 +10,7 @@
         }
 
         public List<TaskEntity> Tasks => _context.Tasks.ToList();
+        public List<Category> Categories => _context.Categories.ToList();
 
         public void AddTask(TaskEntity task)
         {

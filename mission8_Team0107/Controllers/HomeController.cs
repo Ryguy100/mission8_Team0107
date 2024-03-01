@@ -25,8 +25,8 @@ namespace mission8_Team0107.Controllers
         [HttpGet]
         public IActionResult AddTask()
         {
-            ViewBag.Categories = _repo.CategoryName
-                .orderBy(x => x.CategoryId)
+            ViewBag.Categories = _repo.Categories
+                .OrderBy(x => x.CategoryId)
                 .ToList();
             return View(new TaskEntity());
         }
