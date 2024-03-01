@@ -38,8 +38,15 @@ namespace mission8_Team0107.Controllers
             if (ModelState.IsValid)
             {
                 _repo.AddTask(m);
+                return View(m);
             }
-            return View(new TaskEntity());
+            else
+            {
+                ViewBag.Categories = _repo.Categories
+                    .OrderBy(x => x.CategoryId)
+                    .ToList();
+                return View(m);
+            }
         }
     }
 }
