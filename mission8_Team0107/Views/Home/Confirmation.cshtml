@@ -6,4 +6,12 @@
 
 @model TaskEntity
 
-<h2>Task: @Model.TaskName has been deleted.</h2>
+<h2>Task: @Model.TaskName will be deleted.</h2>
+
+<h2>Are you sure you want to delete?</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="TaskId" />
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Cancel</a>
+</form>
