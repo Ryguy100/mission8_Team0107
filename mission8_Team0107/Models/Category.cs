@@ -6,12 +6,10 @@ namespace mission8_Team0107.Models
 {
     public class Category
     {
-        [Required]
         [Key]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
-        [Required]
-        public string CategoryName { get; set; }
+        public string? CategoryName { get; set; }
 
     }
 }
