@@ -35,14 +35,8 @@ namespace mission8_Team0107.Controllers
             if (ModelState.IsValid)
             {
                 _repo.AddTask(m);
-                //return RedirectToAction("Index");
             }
             return View(new TaskEntity());
         }
-
-        //public IActionResult AddTask()
-        //{
-        //    return View();
-        //}
     }
 }
